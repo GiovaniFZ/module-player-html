@@ -151,31 +151,31 @@ function userInteracted() {
       });
     };
 
-    navigator.mediaSession.setActionHandler('play', () => {
+    navigator.mediaSession?.setActionHandler('play', () => {
       navigator.mediaSession.playbackState = 'playing';
       chiplib.unpause();
     });
 
-    navigator.mediaSession.setActionHandler('pause', () => {
+    navigator.mediaSession?.setActionHandler('pause', () => {
       navigator.mediaSession.playbackState = 'playing';
       chiplib.pause();
     });
 
-    navigator.mediaSession.setActionHandler('stop', () => {
+    navigator.mediaSession?.setActionHandler('stop', () => {
       navigator.mediaSession.playbackState = 'none';
       chiplib.stop();
     });
 
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
+    navigator.mediaSession?.setActionHandler('previoustrack', () => {
       null;
     });
     
-    navigator.mediaSession.setActionHandler('nexttrack', () => {
+    navigator.mediaSession?.setActionHandler('nexttrack', () => {
       null;
     });
   });
 
-  navigator.mediaSession.setActionHandler('seekto', (event) => {
+  navigator.mediaSession?.setActionHandler('seekto', (event) => {
     navigator.mediaSession.setPositionState({
       position: Number(actualPos),
       duration: Number(actualDur)
